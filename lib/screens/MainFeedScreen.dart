@@ -8,6 +8,7 @@ class MainFeedScreen extends StatelessWidget {
     return Scaffold(
         bottomNavigationBar: MainButtomNavigation(),
 body:
+
     Container(child: Text('MainFeed'),));
   }
 }

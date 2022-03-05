@@ -2,6 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test_drive/screens/MainButtomNavigation.dart';
+import 'package:flutter_test_drive/server/HttpWrapper.dart';
 
 import 'MainFeedScreen.dart';
 
@@ -22,6 +23,7 @@ class GetStaredScreen extends StatelessWidget {
                   child: Center(
                     child:InkWell(
     onTap: () {
+      HttpWrapper().getPlayer();
       Navigator.pop(context);
       Navigator.of(context).push(MaterialPageRoute(builder: (context)=> MainFeedScreen()));
       },
