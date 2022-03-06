@@ -23,7 +23,7 @@ class GetStaredScreen extends StatelessWidget {
                     child: Center(
                       child: InkWell(
                         onTap: () {
-                          HttpWrapper().getPlayer();
+
                           Navigator.pop(context);
                           Navigator.of(context).push(MaterialPageRoute(
                               builder: (context) => MainFeedScreen()));

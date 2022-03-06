@@ -1,13 +1,13 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_test_drive/screens/DrillsScreen.dart';
 import 'package:flutter_test_drive/screens/MainFeedScreen.dart';
 import 'package:flutter_test_drive/screens/MeSceen.dart';
+import 'package:flutter_test_drive/screens/ResultsScreen.dart';
 import 'package:flutter_test_drive/screens/SplashScreen.dart';
 import 'package:flutter_test_drive/screens/get_started_screen.dart';
-import 'package:flutter_test_drive/screens/MainButtomNavigation.dart';
 import 'screens/welcome_animation_screen.dart';
+
+
 void main() {
   runApp(const MyApp());
 }
@@ -17,6 +17,8 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // initializeJsonMapper();
+    // initializeReflectable();
     return MaterialApp(
       routes: {
         '/':(context) => SplashScreen(),
@@ -24,6 +26,7 @@ class MyApp extends StatelessWidget {
         '/getStarted':(context) => GetStaredScreen(),
         '/mainfeed':(context) => MainFeedScreen(),
         '/drills':(context) => DrillsScreen(),
+        '/results':(context) => ResultsScreen(),
         '/me':(context) => MeScreen(),
       },
         initialRoute: '/',
