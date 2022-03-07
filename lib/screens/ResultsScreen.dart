@@ -85,7 +85,7 @@ class _ResultsScreenState extends State<ResultsScreen> {
                               ),
                             ),
                           ))),
-                  Text("datadata")
+                  Text("Here will be the result")
                 ]),
               );
             }));

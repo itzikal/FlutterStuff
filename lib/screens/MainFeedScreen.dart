@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_test_drive/model/Player.dart';
+import 'package:flutter_test_drive/server/HttpWrapper.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'MainButtomNavigation.dart';
 class MainFeedScreen extends StatefulWidget {
@@ -10,18 +12,27 @@ class MainFeedScreen extends StatefulWidget {
 
 class _MainFeedScreenState extends State<MainFeedScreen> {
   final Future<SharedPreferences> _prefs = SharedPreferences.getInstance();
+  Player? player;
 
+  void updatePlayer() async{
+    var player = await HttpWrapper().getPlayer();
+    setState(() {
+      this.player = player;
+    });
+  }
   @override
   void initState() {
     _prefs.then((SharedPreferences prefs) {
       prefs.setString("token", "dasdada");
     });
+    updatePlayer();
     super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-    body:    Container(child: Text('MainFeed Page'),));
+      appBar: AppBar(title: Text("Main page"),),
+    body: Text("Hello ${player?.data?.firstName ?? ""}")    );
   }
 }
