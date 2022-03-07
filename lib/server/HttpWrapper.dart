@@ -47,7 +47,7 @@ class HttpWrapper{
       // var itemCount = jsonResponse['totalItems'];
       print('response: ${response.body}');
       var result = Player.fromJson(convert.jsonDecode(response.body));
-      print("result data: ${result?.data?? "Empty"}");
+      // print("result data: ${result?.data?? "Empty"}");
       return result;
       // return ServerResponse<Player?>.fromJson(json);Player.fromJson(response.body);
     }
