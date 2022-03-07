@@ -2,6 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test_drive/screens/MainButtomNavigation.dart';
+import 'package:flutter_test_drive/screens/MainScreen.dart';
 import 'package:flutter_test_drive/server/HttpWrapper.dart';
 
 import 'MainFeedScreen.dart';
@@ -26,9 +27,9 @@ class GetStaredScreen extends StatelessWidget {
 
                           Navigator.pop(context);
                           Navigator.of(context).push(MaterialPageRoute(
-                              builder: (context) => MainFeedScreen()));
+                              builder: (context) => MainScreen()));
                         },
-                        child: Text('Login was successful, click to continue',
+                        child: Text('Login was successful, click here to continue',
                             textAlign: TextAlign.center,
                             style: TextStyle(
                                 fontSize: 42,

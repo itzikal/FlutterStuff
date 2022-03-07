@@ -14,7 +14,7 @@ import 'dart:ui';
   class WelcomeAnimationState extends State<WelcomeAnimationScreen> {
     int count = 0;
     double opacityLevel = 0.0;
-    int duration = 3000;
+    int duration = 2000;
     String welcomeText = "Welcome to the Game";
     bool inAnimation = false;
 
@@ -27,7 +27,7 @@ import 'dart:ui';
       // sets first value
 
       // defines a timer
-      _everySecond = Timer.periodic(Duration(seconds: 3), (Timer t) {
+      _everySecond = Timer.periodic(Duration(seconds: 2), (Timer t) {
         setState(() {
           setWelcomeText();
         });
@@ -54,13 +54,13 @@ import 'dart:ui';
     void setWelcomeText() {
       if (count == 0) {
         // _changeOpacity(0);
-        setState(() => welcomeText = "1111");
+        setState(() => welcomeText = "This is another part of the flow");
         _changeOpacity(1);
         count = count + 1;
       }else if(count == 1){
         count = count + 1;
         _changeOpacity(0);
-        setState(() => welcomeText = "2222");
+        setState(() => welcomeText = "Last one, I promise :)");
         _changeOpacity(1);
       }else{
         nextPage();
@@ -96,7 +96,7 @@ import 'dart:ui';
                       child: Center(
                         child:
                         InkWell(
-                           onTap: nextPage,
+                          // onTap: nextPage,
                           child: Stack(
                               // crossAxisAlignment: CrossAxisAlignment.center,
                               // mainAxisSize: MainAxisSize.max,
