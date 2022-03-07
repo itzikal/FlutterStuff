@@ -39,6 +39,7 @@ dependencies:
   cupertino_icons: ^1.0.2
   dart_json_mapper: ^2.1.17
   dart_json_mapper_flutter: ^2.0.1
+  video_thumbnail: ^0.4.6
 
 dev_dependencies:
   flutter_test:

@@ -78,27 +78,27 @@ class Data {
 
   Data.fromJson(dynamic json) {
     _id = json['id'];
-    // _uuid = json['uuid'];
-    // _clientCreatedAt = json['client_created_at'];
-    // _statusUpdatedAt = json['status_updated_at'];
-    // _videoReject = json['video_reject'];
-    // _createdAt = json['created_at'];
-    // _drillId = json['drill_id'];
+    _uuid = json['uuid'];
+    _clientCreatedAt = json['client_created_at'];
+    _statusUpdatedAt = json['status_updated_at'];
+    _videoReject = json['video_reject'];
+    _createdAt = json['created_at'];
+    _drillId = json['drill_id'];
     // if (json['insights'] != null) {
     //   _insights = [];
     //   json['insights'].forEach((v) {
     //     _insights?.add(Dynamic.fromJson(v));
     //   });
     // }
-    // _versionId = json['version_id'];
-    // _source = json['source'];
-    // _tournamentId = json['tournament_id'];
-    // _cover = json['cover'];
-    // _videoCaption = json['video_caption'];
-    // _result = json['result'];
-    // _score = json['score'];
-    // _stadiumTypeId = json['stadium_type_id'];
-    // _status = json['status'];
+    _versionId = json['version_id'];
+    _source = json['source'];
+    _tournamentId = json['tournament_id'];
+    _cover = json['cover'];
+    _videoCaption = json['video_caption'];
+    _result = json['result'];
+    _score = json['score'];
+    _stadiumTypeId = json['stadium_type_id'];
+    _status = json['status'];
   }
   int? _id;
   String? _uuid;

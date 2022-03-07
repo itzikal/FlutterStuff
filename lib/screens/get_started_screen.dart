@@ -28,7 +28,7 @@ class GetStaredScreen extends StatelessWidget {
                           Navigator.of(context).push(MaterialPageRoute(
                               builder: (context) => MainFeedScreen()));
                         },
-                        child: Text('Login was successful',
+                        child: Text('Login was successful, click to continue',
                             textAlign: TextAlign.center,
                             style: TextStyle(
                                 fontSize: 42,
