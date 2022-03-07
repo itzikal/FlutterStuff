@@ -22,7 +22,7 @@ class _SplashScreenState extends State<SplashScreen> {
       if(token == null){
         Navigator.pushNamed(context, '/onbording');
       }else{
-        Navigator.pushNamed(context, '/mainfeed');
+        Navigator.pushNamed(context, '/main');
       }
     });
 

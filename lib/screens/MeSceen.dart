@@ -8,7 +8,6 @@ class MeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        bottomNavigationBar: MainButtomNavigation(),
         body:Container(child: ElevatedButton(
         child: Text("update"),
     onPressed: getPlayer,),));

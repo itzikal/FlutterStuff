@@ -11,9 +11,9 @@ class ResultsScreen extends StatefulWidget {
 class _ResultsScreenState extends State<ResultsScreen> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      bottomNavigationBar: MainButtomNavigation(),
-      body: Text("Results"),
+    return Container(
+      // bottomNavigationBar: MainButtomNavigation(),
+      child: Text("Results screen "),
     );
   }
 }

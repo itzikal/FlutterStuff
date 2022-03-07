@@ -22,7 +22,6 @@ class _MainFeedScreenState extends State<MainFeedScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        bottomNavigationBar: MainButtomNavigation(),
-body:    Container(child: Text('MainFeed'),));
+    body:    Container(child: Text('MainFeed Page'),));
   }
 }

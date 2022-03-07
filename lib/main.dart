@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test_drive/screens/DrillsScreen.dart';
 import 'package:flutter_test_drive/screens/MainFeedScreen.dart';
+import 'package:flutter_test_drive/screens/MainScreen.dart';
 import 'package:flutter_test_drive/screens/MeSceen.dart';
 import 'package:flutter_test_drive/screens/ResultsScreen.dart';
 import 'package:flutter_test_drive/screens/SplashScreen.dart';
@@ -24,6 +25,7 @@ class MyApp extends StatelessWidget {
         '/':(context) => SplashScreen(),
         '/onbording':(context) => WelcomeAnimationScreen(),
         '/getStarted':(context) => GetStaredScreen(),
+        '/main':(context) => MainScreen(),
         '/mainfeed':(context) => MainFeedScreen(),
         '/drills':(context) => DrillsScreen(),
         '/results':(context) => ResultsScreen(),
