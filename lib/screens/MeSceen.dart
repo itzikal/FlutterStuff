@@ -8,12 +8,19 @@ class MeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body:Container(child: ElevatedButton(
+        body: Container(
+      child: ElevatedButton(
         child: Text("update"),
-    onPressed: getPlayer,),));
+        onPressed: () {
+          getPlayer();
+          var x = 100 / 0;
+          print(x);
+        },
+      ),
+    ));
   }
 
-  void getPlayer() async{
+  void getPlayer() async {
     var player = await HttpWrapper().getVideos();
     print("Videos name: ${player?.data?.length ?? "unknown"}");
   }
