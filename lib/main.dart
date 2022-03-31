@@ -1,6 +1,8 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_test_drive/injection_container.dart' as di;
+import 'package:flutter_test_drive/number_trivia/presentation/pages/number_trivia_page.dart';
 
 import 'package:flutter_test_drive/screens/DrillsScreen.dart';
 import 'package:flutter_test_drive/screens/MainFeedScreen.dart';
@@ -13,7 +15,8 @@ import 'package:flutter_test_drive/screens/get_started_screen.dart';
 import 'screens/welcome_animation_screen.dart';
 
 void main() {
-  runZonedGuarded(() {
+  runZonedGuarded(() async{
+    await di.init();
     runApp(const MyApp());
   }, (Object error, StackTrace stackTrace) {
       print(error);
@@ -38,6 +41,7 @@ class MyApp extends StatelessWidget {
         '/drills': (context) => DrillsScreen(),
         '/results': (context) => ResultsScreen(),
         '/me': (context) => MeScreen(),
+        '/numberTrivia': (context) => NumberTriviaPage()
       },
       initialRoute: '/',
     );

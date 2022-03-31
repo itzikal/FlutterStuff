@@ -13,7 +13,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:http/http.dart' as http;
 final sl = GetIt.instance;
 
-void init() async {
+Future<void> init() async {
   sl.registerFactory(() => NumberTriviaBloc(
       getNumberTrivia: sl(),
       getRandomNumberTrivia: sl(),
@@ -42,8 +42,8 @@ void init() async {
   sl.registerLazySingleton<NetworkInfo>(() => NetworkInfoImpl());
 
   //! External
-  final sharedPreferences = await SharedPreferences.getInstance();
-  sl.registerLazySingleton(() => sharedPreferences);
+  sl.registerLazySingletonAsync(() => SharedPreferences.getInstance());
+
   sl.registerLazySingleton(() => http.Client());
 
 }
