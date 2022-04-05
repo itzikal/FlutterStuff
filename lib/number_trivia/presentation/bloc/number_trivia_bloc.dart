@@ -23,18 +23,14 @@ class NumberTriviaBloc extends Bloc<NumberTriviaEvent, NumberTriviaState> {
       required this.getRandomNumberTrivia,
       required this.inputConverter})
       : super(Empty()) {
-    on<NumberTriviaEvent>((event, emit) async {
-      if (event is GetNumberTriviaEvent) {
-        await _getNumberTrivia(event, emit);
-      }else if (event is GetRandomNumberTriviaEvent) {
-        await _getRandomNumberTrivia(event, emit);
-      }
-    });
+    on<GetNumberTriviaEvent>(_getNumberTrivia);
+    on<GetRandomNumberTriviaEvent> (_getRandomNumberTrivia);
   }
 
-  Future<void> _getNumberTrivia(GetNumberTriviaEvent event, Emitter<NumberTriviaState> emit) async {
-     final inputEither = inputConverter.stringToUnsignedInt(event.number);
-    inputEither.fold((failure) {
+  void _getNumberTrivia(
+      GetNumberTriviaEvent event, Emitter<NumberTriviaState> emit) async {
+    final inputEither = inputConverter.stringToUnsignedInt(event.number);
+    await inputEither.fold((failure) {
       emit(const Error(error: Error.INVALID_NUMBER_ERROR));
     }, (number) async {
       emit(Loading());
@@ -44,11 +40,11 @@ class NumberTriviaBloc extends Bloc<NumberTriviaEvent, NumberTriviaState> {
     });
   }
 
-  Future<void> _getRandomNumberTrivia(GetRandomNumberTriviaEvent event, Emitter<NumberTriviaState> emit) async {
+  void _getRandomNumberTrivia(GetRandomNumberTriviaEvent event, Emitter<NumberTriviaState> emit) async {
       emit(Loading());
       final failureOrTrivia = await getRandomNumberTrivia(NoParams());
-
       _checkResult(failureOrTrivia, emit);
+
   }
 
   void _checkResult(Either<Failure, NumberTrivia> failureOrTrivia, Emitter<NumberTriviaState> emit) {

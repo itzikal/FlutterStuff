@@ -33,6 +33,14 @@ class _MainFeedScreenState extends State<MainFeedScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text("Main page"),),
-    body: Text("Hello ${player?.data?.firstName ?? ""}")    );
+    body:Row(children: [
+      Text("Hello ${player?.data?.firstName ?? ""}"),
+      ElevatedButton(
+        child: Text("Number Trivia"),
+        onPressed: () => Navigator.pushNamed(context, '/numberTrivia')
+      ),
+
+    ],
+          ));
   }
 }

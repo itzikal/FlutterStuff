@@ -17,13 +17,13 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
 
     _prefs.then((SharedPreferences prefs) {
-      var token = prefs.getString('token');
+      // var token = prefs.getString('token');
       Navigator.pop(context);
-      if(token == null){
+      // if(token == null){
         Navigator.pushNamed(context, '/onbording');
-      }else{
-        Navigator.pushNamed(context, '/main');
-      }
+      // }else{
+      //   Navigator.pushNamed(context, '/main');
+      // }
     });
 
     super.initState();

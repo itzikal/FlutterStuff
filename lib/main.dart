@@ -16,7 +16,7 @@ import 'screens/welcome_animation_screen.dart';
 
 void main() {
   runZonedGuarded(() async{
-    await di.init();
+    di.init();
     runApp(const MyApp());
   }, (Object error, StackTrace stackTrace) {
       print(error);

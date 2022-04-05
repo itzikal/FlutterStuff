@@ -111,7 +111,6 @@ class Data {
     _birthdate = json['birthdate'];
     _height = json['height'];
     _externalAccessLevel = json['external_access_level'];
-    _unseenNotificationsCount = json['unseen_notifications_count'];
     _leagueId = json['league_id'];
     _firstName = json['first_name'];
     _club = json['club'];
